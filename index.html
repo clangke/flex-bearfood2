@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>Exclusive VIP Offer - InVite Health</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      background: #1A1A1A;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin: 0;
+    }
+
+    .key-icon {
+      font-size: 1.2em;
+      margin-right: 8px;
+    }
+
+    /* 正方形图片容器 */
+    .image-container {
+      width: 100%;
+      aspect-ratio: 1 / 1; 
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 3px solid #C5A059;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+    }
+
+    .hero-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .countdown-text {
+      font-size: 18px;
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    .countdown-number {
+      font-size: 64px;
+      color: #C5A059;
+      font-weight: bold;
+      margin: -10px 0 10px 0;
+    }
+
+    .button {
+      background: #C5A059;
+      color: #000;
+      padding: 16px 0;
+      width: 100%;
+      border-radius: 4px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background: #D4B26E;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1><span class="key-icon">🔑</span>YOUR EXCLUSIVE ACCESS</h1>
+
+    <!-- 1. HTML 中的初始数字已修改为 3 -->
+    <p class="countdown-text">This special offer expires in <span id="countdown-small">3</span> seconds</p>
+    
+    <!-- 2. 大号倒计时数字初始值已修改为 3 -->
+    <div class="countdown-number" id="countdown-large">3</div>
+
+    <div class="image-container">
+      <img src="https://invitehealth.com/cdn/shop/files/Invite_Health_-_Our_Mission_Image_with_text.jpg?v=1693247946&width=540" alt="VIP Privilege Content" class="hero-image">
+    </div>
+
+    <a href="https://track.flexlinkspro.com/g.ashx?foid=156178.67212.4611686018427606147&trid=1508723.240334&foc=16&fot=9999&fos=6" class="button">Claim Your Privilege</a>
+  </div>
+
+  <script>
+    // 3. JavaScript 倒计时 3秒
+    let time = 3;
+    const countdownSmallEl = document.getElementById("countdown-small");
+    const countdownLargeEl = document.getElementById("countdown-large");
+    const targetUrl = "https://track.flexlinkspro.com/g.ashx?foid=156178.67212.4611686018427606147&trid=1508723.240334&foc=16&fot=9999&fos=6";
+
+    function updateCountdown() {
+      if (countdownSmallEl) countdownSmallEl.textContent = time;
+      if (countdownLargeEl) countdownLargeEl.textContent = time;
+    }
+
+    const timer = setInterval(() => {
+      time--;
+      if (time <= 0) {
+        clearInterval(timer);
+        time = 0;
+        updateCountdown();
+        window.location.href = targetUrl;
+      } else {
+        updateCountdown();
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
